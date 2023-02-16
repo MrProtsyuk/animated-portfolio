@@ -16,6 +16,10 @@ a {
   text-decoration: none;
 }
 
+.custom-img {
+  background-image: url("../public/images/developer-hero.jpg");
+}
+
 * {
   box-sizing: border-box;
 }
