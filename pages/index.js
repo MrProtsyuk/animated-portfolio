@@ -10,7 +10,7 @@ export default function Home() {
       exit={{ opacity: 1 }}
       initial={{ y: "100%" }}
       transition={{ duration: 0.75, ease: "easeOut" }}
-      className=" text-gray-900 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover custom-img lg:px-48 px-16 "
+      className="absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover custom-img lg:px-48 px-16 "
     >
       <Head>
         <title>Mark Protsyuk</title>
@@ -19,22 +19,22 @@ export default function Home() {
       </Head>
 
       <main className="text-white justify-center items-center absolute top-0 left-0 right-0 bottom-0 bg-black/50">
-        <div className="mt-56 mb-16 m-4 p-1 font-archivo overflow-hidden ">
+        <div className="mt-56 xl:mt-64 2xl:mt-72 mb-16 m-4 p-1 overflow-hidden">
           <m.h1
             animate={{ y: 0 }}
             initial={{ y: "100%" }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-5xl text-right lg:text-9xl"
+            className="text-center md:text-right text-6xl sm:text-7xl xl:text-9xl"
           >
             Mark Protsyuk
           </m.h1>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-center md:justify-between">
           <m.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="text-left lg:text-2xl text-base m-4"
+            className="text-center md:text-left mt-16 md:mt-32 lg:mt-20 lg:text-2xl xl:text-3xl 2xl:text-5xl text-base m-4"
           >
             <div className="overflow-hidden py-1">
               <m.h3 variants={item}>Front-End Developer</m.h3>
@@ -42,7 +42,7 @@ export default function Home() {
             <div className="overflow-hidden py-1">
               <m.h3 variants={item}>NextJS - GraphQL - Tailwind - NodeJS</m.h3>
             </div>
-            <div className="overflow-hidden py-1 hover:underline">
+            <div className="overflow-hidden py-1 underline">
               <m.h3 variants={item}>
                 <Link
                   target="_blank"
