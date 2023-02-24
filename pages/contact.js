@@ -18,7 +18,7 @@ export default function contact() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-5xl text-center sm:text-right lg:text-7xl"
         >
-          Let's get in touch
+          Lets get in touch
         </m.h1>
       </div>
       <div className="flex justify-center items-center">
