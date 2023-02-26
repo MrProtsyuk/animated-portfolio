@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const projectList = [
   {
-    image: "/images/englishcafe.png",
+    image: "/images/english-cafe.png",
     name: "English Cafe",
     status: "",
     description: "A place to learn english + the gospel.",
@@ -15,7 +15,7 @@ const projectList = [
     github: "https://github.com/Ntarasiuk/english-cafe",
   },
   {
-    image: "/images/w.png",
+    image: "/images/teachersource.png",
     name: "Teacher Source",
     status: "",
     description: "A Storehouse of Childrens and Youth Ministry Curriculum.",
@@ -24,7 +24,7 @@ const projectList = [
     github: "https://github.com/Ntarasiuk/wol-teacher-source",
   },
   {
-    image: "/images/quiz.jpeg",
+    image: "/images/randomquiz.png",
     name: "Random Quiz",
     status: "",
     description: "A quiz page built with NextJS and a quiz api.",
@@ -33,7 +33,7 @@ const projectList = [
     github: "https://github.com/MrProtsyuk/random-quiz",
   },
   {
-    image: "/images/bot.png",
+    image: "/images/chaty.png",
     name: "Chaty AI",
     status: "",
     description: "Chat GPT made from home!",
@@ -42,14 +42,14 @@ const projectList = [
     github: "https://github.com/MrProtsyuk/Chaty-AI",
   },
   {
-    image: "/images/chart.png",
-    name: "Chart Dashboard App",
-    status: "*In development",
+    image: "/images/solarsystem-project.png",
+    name: "Solar System Model",
+    status: "",
     description:
-      "A useful application for buisness owners to track monthly orders.",
-    skills: "NextJS, Tailwind, MongoDB, NodeJS",
-    page: "",
-    github: "https://github.com/MrProtsyuk/user-dash-app",
+      "A fun little project I made with unity assets and some C# scripts.",
+    skills: "Unity, Unity assets, C#",
+    page: "https://mrprotsyuk.itch.io/solarsystem",
+    github: "",
   },
 ];
 
@@ -82,21 +82,30 @@ export default function projects() {
           <m.div
             variants={item}
             key={project.name}
-            className="flex flex-row lg:flex-wrap items-center m-4 p-4 w-72 sm:w-96 lg:w-8/12 bg-white text-black border rounded-lg hover:drop-shadow-xl"
+            className="flex flex-row lg:flex-wrap items-center m-4 p-4 w-72 sm:w-96 lg:w-5/12 bg-white text-black border rounded-lg hover:drop-shadow-xl"
           >
             <div className="flex flex-col">
-              <div>
-                <Image
-                  src={project.image}
-                  alt="Project image"
-                  width={200}
-                  height={200}
-                  className="w-16 sm:w-16 h-16 sm:h-16 mr-2"
-                />
+              <div className="bg-white">
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={project.page}
+                  className="text-lg xl:text-2xl"
+                >
+                  <Image
+                    src={project.image}
+                    alt="Project image"
+                    width={200}
+                    height={200}
+                    className="object-cover w-72 sm:w-96"
+                  />
+                </Link>
               </div>
               <Link
                 href={project.page}
-                className="text-sm sm:text-lg xl:text-2xl m-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg xl:text-2xl m-1 hover:text-violet-400"
               >
                 {project.name}
               </Link>

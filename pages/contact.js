@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion as m } from "framer-motion";
 import { container, item } from "../animated";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
 
 export default function contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_zflqw0p",
+        "template_fka4a3f",
+        form.current,
+        "A-t-GPOsbzlJdwFAr"
+      )
+      .then(
+        (result) => {
+          toast.success("Email Sent! I will reach out as soon as I can!");
+          console.log(result.text);
+        },
+        (error) => {
+          toast.error(
+            "Hmm 🤔, something went wrong. Shoot me a personal email, protsyukmark@gmail.com"
+          );
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <m.div
       animate={{ y: "0%" }}
@@ -26,29 +52,39 @@ export default function contact() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex justify-center items-center w-80 sm:w-4/6 bg-slate-200 border rounded-sm p-2 mt-30 mb-12 text-slate-700"
+          className="flex justify-center items-center w-80 sm:w-4/6 bg-white border rounded-sm p-2 mt-30 mb-12 text-slate-500"
         >
           <form
-            method="post"
+            ref={form}
+            onSubmit={sendEmail}
             className="flex flex-col justify-center items-center gap-4 p-2 m-2 sm:p-4 sm:m-4 mb-8 w-80 sm:w-7/12 h-5/6 drop-shadow-2xl"
           >
-            <p className="text-xl mt-2">Contact Me</p>
+            <p className="text-center text-xl">
+              Just Fill Out The Form Below ⬇️
+            </p>
             <input
               placeholder="Your Email"
-              name="email"
+              required="Hey you forgot about this one 😴"
+              name="from_email"
               className="p-2 w-72 lg:w-96 border rounded-md bg-white"
             ></input>
             <input
               placeholder="Your Name"
-              name="name"
+              required="Hey you forgot about this one too 🤔"
+              name="from_name"
               className="p-2 w-72 lg:w-96 border rounded-md bg-white"
             ></input>
             <textarea
               placeholder="Add a message!"
+              required="I gotta know what you wanna say dude 🫣"
               name="message"
               className="p-2 w-72 lg:w-96 h-40 border rounded-md bg-white"
             ></textarea>
-            <button className="p-2 mb-2 w-24 border rounded-md border-slate-500 text-white bg-gray-600 hover:bg-gray-500">
+            <button
+              type="submit"
+              value="Send"
+              className="p-2 w-24 border rounded-md border-slate-500 text-white bg-gray-600 hover:bg-gray-500"
+            >
               Submit
             </button>
           </form>
