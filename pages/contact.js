@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef as UseRef } from "react";
 import { motion as m } from "framer-motion";
 import { container, item } from "../animated";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
 
 export default function contact() {
-  const form = useRef();
+  const form = UseRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
