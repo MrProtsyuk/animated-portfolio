@@ -27,7 +27,7 @@ export default function Home() {
             animate={{ y: 0 }}
             initial={{ y: "100%" }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-center md:text-right text-6xl sm:text-7xl xl:text-9xl"
+            className="text-center md:text-right text-6xl sm:text-7xl xl:text-9xl text-white"
           >
             Mark Protsyuk
           </m.h1>

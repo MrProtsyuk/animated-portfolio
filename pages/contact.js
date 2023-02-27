@@ -42,7 +42,7 @@ export default function contact() {
           animate={{ y: 0 }}
           initial={{ y: "100%" }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-5xl text-center sm:text-right lg:text-7xl"
+          className="text-5xl text-center sm:text-right lg:text-7xl text-white"
         >
           Lets get in touch
         </m.h1>

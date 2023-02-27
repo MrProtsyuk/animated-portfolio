@@ -67,7 +67,7 @@ export default function projects() {
           animate={{ y: 0 }}
           initial={{ y: "100%" }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-5xl text-center md:text-right md:text-7xl"
+          className="text-5xl text-center md:text-right md:text-7xl text-white"
         >
           My Projects
         </m.h1>
